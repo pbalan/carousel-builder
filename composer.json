@@ -1,0 +1,20 @@
+{
+	"name" : "pbalan/carousel-builder",
+	"description" : "CarouselBuilder",
+	"license": "MIT",
+	"keywords" : ["Carousel Builder"],
+	"homepage" : "https://github.com/pbalan/carousel-builder",
+	"authors" : [
+		{
+			"name" : "prashant"
+		}
+	],
+	"autoload" : {
+		"psr-0" : {"pbalan\\CarouselBuilder" : "src/"}
+	 },
+	"require" : {
+		"php": ">=5.3.3",
+		"pbalan/file-uploader": "dev-master"
+	},
+	"minimum-stability": "dev"
+}
