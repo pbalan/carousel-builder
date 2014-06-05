@@ -17,15 +17,35 @@
 		private $inActiveDir = null;
 		private $overlayText = null;
 		private $overlayStyle = null;
-		private $overlayStyle = null;
 		private $image = null;
+		private $carouselName = null;
+		private $error = false;
 		
-		public function __construct($dir='')
+		public function __construct($carouselName, $dir)
 		{
-			if(false===empty($dir) && true===is_dir($dir))
-			{
-				$this->dir = $dir;
+			$this->carouselName = $carouselName;
+			$this->dir = $dir;
+			$this->checkDirectoryFlow();
+			$this->dir .= $this->carouselName;
+			if(false===is_dir($this->dir)){
+				$this->error = false;
+			} else {
+				$this->error = true;
 			}
+		}
+		public function getCarouselDir(){
+			return $this->dir;
+		}
+		public function getError(){
+			return $this->error;
+		}
+		public function checkDirectoryFlow()
+		{
+			if(substr($this->dir, (strlen($this->dir)-2))!='/' || substr($this->dir, (strlen($this->dir)-2))!='\\')
+			{
+				$this->dir .= '/';
+			}
+			return true;
 		}
 		
 		public function previewMode()
@@ -62,7 +82,7 @@
 			}
 		}
 		
-		public function SetUpCarousel($dir='', $allowedExtn=array())
+		public function SetUpCarousel($carouselName, $dir='', $allowedExtn=array())
 		{
 			if(false===empty($dir) && true===is_dir($dir))
 			{
