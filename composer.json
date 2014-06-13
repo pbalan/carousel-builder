@@ -14,7 +14,15 @@
 	 },
 	"require" : {
 		"php": ">=5.3.3",
-		"pbalan/file-uploader": "dev-master"
+		"pbalan/file-uploader": "dev-master",
+		"silex/silex": "~1.2",
+        "symfony/browser-kit": ">=2.4,<2.6-dev",
+        "symfony/css-selector": ">=2.4,<2.6-dev",
+        "symfony/dom-crawler": ">=2.4,<2.6-dev",
+        "symfony/form": ">=2.4,<2.6-dev",
+        "symfony/twig-bridge": ">=2.4,<2.6-dev",
+        "symfony/validator": ">=2.4,<2.6-dev",
+        "twig/twig": ">=1.8.0,<2.0-dev"
 	},
 	"minimum-stability": "dev"
 }
