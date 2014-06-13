@@ -1,0 +1,45 @@
+{{  include("header.twig") }}
+<div class="carouselList outWrap">
+    <div class="carousel row">
+        <div class="labelText">
+            Carousel Name
+        </div>
+        <div class="buttonLink">
+            &nbsp;
+        </div>
+        <div class="buttonLink">
+            &nbsp;
+        </div>
+    </div>
+    {% for carousel in carousels %}
+        {% if loop.index0 is odd %}
+            <div class="carousel row odd">
+                <div class="labelText">
+                    {{ carousel.name }}
+                </div>
+                <div class="buttonLink">
+                    <a href="{{ editLink }}/{{ carousel.name }}">{{ editLabel }}</a>
+                </div>
+                <div class="buttonLink">
+                    <a href="{{ deleteLink }}/{{ carousel.name }}">{{ deleteLabel }}</a>
+                </div>
+            </div>
+        {% endif %}
+        {% if loop.index0 is even %}
+            <div class="carousel row even">
+                <div class="labelText">
+                    {{ carousel.name }}
+                </div>
+                <div class="buttonLink">
+                    <a href="{{ editLink }}/{{ carousel.name }}">{{ editLabel }}</a>
+                </div>
+                <div class="buttonLink">
+                    <a href="{{ deleteLink }}/{{ carousel.name }}">{{ deleteLabel }}</a>
+                </div>
+            </div>
+        {% endif %}
+    {% else %}
+        No carousels have been found.
+    {% endfor %}
+</div>
+{{  include("footer.twig") }}

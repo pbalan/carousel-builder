@@ -1,0 +1,38 @@
+{{  include("header.twig") }}
+<form method="post" action="">
+    <div class="outWrap">
+        <div class="row">
+            <div class="labelText">
+                {{carouselName_LABEL}}
+            </div>
+            <div class="inputField">
+                <input type="text" name="carouselName" value="" placeholder="{{carouselName_PLACEHOLDER}}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="labelText">
+                {{carouselWidth_LABEL}}
+            </div>
+            <div class="inputField">
+                <input type="text" name="carouselWidth" value="" placeholder="{{carouselWidth_PLACEHOLDER}}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="labelText">
+                {{carouselHeight_LABEL}}
+            </div>
+            <div class="inputField">
+                <input type="text" name="carouselHeight" value="" placeholder="{{carouselHeight_PLACEHOLDER}}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="labelText">
+                &nbsp;
+            </div>
+            <div class="inputField">
+                <input type="submit" name="submit" value="{{submit_LABEL}}" />
+            </div>
+        </div>
+    </div>
+</form>
+{{  include("footer.twig") }}

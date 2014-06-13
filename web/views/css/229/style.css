@@ -1,0 +1,8 @@
+body{
+    background: url("../../images/sap/bkg-body.png") repeat-x scroll 0 0 #CFCFCF;
+    font: 12px Arial,Helvetica,sans-serif;
+    overflow-y: auto;
+}
+.outWrap, .loginWrap{
+    border: 1px solid #CFCFCF; max-width: 300px; min-height: 200px;
+}

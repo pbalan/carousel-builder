@@ -1,0 +1,104 @@
+{{  include("header.twig") }}
+<div class="carouselList outWrap">
+    <div class="editOptions">
+        <div class="carousel row">
+            <div class="labelText">
+                {{ LABEL_NAME }}
+            </div>
+            <div class="labelText">
+                {{ carousel.name }}
+            </div>
+            <div class="labelText">
+                <a href="{{ deleteLink }}/{{ carousel.name }}">{{ deleteLabel }}</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="separatorText">
+                {{ LABEL_ACTIVE_IMAGES }}
+            </div>
+        </div>
+        {% for carouselOne in carousel.active %}
+            <div class="row">
+                <div class="labelText">
+                    <img src="{{ carouselOne }}" width="50%" height="50%"/>
+                    <input type="button" onclick="moveImage('inactive', '{{ carouselOne }}', '{{ carousel.basepath }}')" value="{{makeInActive}}" />
+                </div>
+            </div>
+        {% endfor %}
+        <div class="row">
+            <div class="separatorText">
+                {{ LABEL_INACTIVE_IMAGES }}
+            </div>
+        </div>
+        {% for carouselOne in carousel.inactive %}
+            <div class="row">
+                <div class="labelText">
+                    <img src="{{ carouselOne }}" width="50%" height="50%"/>
+                    <input type="button" onclick="moveImage('active', '{{ carouselOne }}', '{{ carousel.basepath }}')" value="{{makeActive}}" />
+                </div>
+            </div>
+        {% endfor %}
+        <div class="row">
+            <div class="separatorText uploadBtn">
+                {{ LABEL_UPLOAD_IMAGES }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="separatorText upForm">
+                {% autoescape false %}
+                    {{ uploadForm }}
+                    <input class="hiddenFields" type="hidden" name="carouselPath" value="{{carousel.path}}" />
+                    <input class="hiddenFields" type="hidden" name="carouselName" value="{{carousel.basepath}}" />
+                {% endautoescape %}
+            </div>
+        </div>
+    </div>
+    <div class="preview">
+        <div class="jcarousel-wrapper">
+            <div class="jcarousel" style="width: {{carouselWidth}}px; height: {{carouselHeight}}px;">
+                <ul>
+                    {% for carouselOne in carousel.active %}
+                        <li><img {% if loop.index0 == 0 %} style="display:block;" {% else %} style="display:none;" {% endif %} src="{{ carouselOne }}" width="100%" alt=""></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <p class="photo-credits">
+                <a href="http://www.sap.com" target="_blank">BigData Bus SAP 2014</a>
+            </p>
+
+            <a href="#" class="jcarousel-control-prev" onclick="manualCarousel('prev')">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next" onclick="manualCarousel('next')">&rsaquo;</a>
+            
+            <p class="jcarousel-pagination">
+                
+            </p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{{ jQuery }}"></script>
+<script type="text/javascript" src="{{ jCarouselBasicScript }}"></script>
+<script type="text/javascript">
+    $(".uploadBtn").click(function(){
+        $(".upForm").toggle();
+        var hiddenFields = '';
+        $('.hiddenFields').each(function(){
+            var name = $(this).attr('name');
+            var value = $(this).val();
+            
+            hiddenFields += '<input type="hidden" name="'+name+'" value="'+value+'">';
+        })
+        console.log('hiddenFields: '+hiddenFields);
+        $('form input[type="submit"]').prepend(hiddenFields);
+    });
+    function moveImage(moveTo, imagePath, carouselName)
+    {
+        $.post('{{ moveURL }}', {moveTo: moveTo, imagePath: imagePath, carouselName:carouselName}, function(data){
+            if(data=='ok')
+            {
+                location.href = location.href;
+            }
+        })
+    }
+</script>
+{{  include("footer.twig") }}

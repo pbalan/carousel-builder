@@ -1,0 +1,114 @@
+h1{font:small}
+ul,li{list-style:none;}
+body{
+    font: 14px 'Arial, Helvetica, Times New Roman';
+    background-color: black;
+    color: #FFFFFF;
+    margin: 0 auto;
+    
+}
+.outWrap{
+    margin: 0 auto;
+    min-height: 200px;
+    width: 940px;
+}
+.loginWrap{
+    border: 1px solid #CFCFCF; 
+    max-width: 300px; 
+    min-height: 120px;
+}
+.menuWrapper{
+    margin: 0 auto;
+    width: 940px;
+    padding: 10px;
+}
+.menu{
+    margin: 0 auto;
+    width: 940px;
+    padding: 10px;
+}
+.menuItem{
+    background-color: #ffffff;
+    border: 1px solid #000;
+    color: #000;
+    float: left;
+    padding: 5px;
+    margin-right: 5px;
+}
+.menuItem:hover{
+    background-color: #000000;
+    border: 1px solid #fff;
+    color: #fff;
+    float: left;
+    padding: 5px;
+    margin-right: 5px;
+}
+.row{
+    clear: both;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 360px;
+}
+.labelText{
+    float: left;
+    font-size: 11px;
+    min-width: 166px;
+    padding: 10px;
+}
+.inputField{
+    float: left;
+    min-width: 100px;
+    padding: 7px;
+}
+.inputField input{
+    font-size: 10px;
+    min-width: 145px;
+}
+.buttonLink{
+    float:left;
+    min-width: 35px;
+    padding: 10px;
+}
+.carouselList{
+    margin: 0 auto;
+    min-height: 200px;
+}
+.carouselList .editOptions{
+    float: left;
+    border: 2px solid #FFFFFF;
+    margin-right: 10px;
+}
+.carouselList .preview{
+    float: left;
+    min-width: 200px;
+}
+.carouselList .labelText{
+    float: left;
+    min-width: 98px;
+    padding: 10px;
+}
+.carouselList div.carousel div{
+    border: 1px solid #FFF;
+}
+.carouselList div.odd div{
+    background-color: #C3C3C3;
+}
+.carouselList div.even div{
+    background-color: #E5E585;
+}
+.carouselList div.carousel div:nth-child(1),.carouselList div.carousel div:nth-child(2){
+    border-right: 1px solid #000;
+}
+.carouselList div.separatorText{
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    width:100%;
+}
+.carouselList div.uploadBtn:hover{
+    background-color: #FFFFFF;
+    color: #000000;
+    cursor: pointer;
+}
+.carouselList div.upForm{
+    display:none;
+}

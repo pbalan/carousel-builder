@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ pageTitle }}</title>
+    <link href="{{ styleSheet }}" rel="stylesheet" />
+    {% if jCarouselStyle %}
+    {% autoescape false %}
+        {{ jCarouselStyle }}
+    {% endautoescape %}
+    {% endif %}
+</head>
+<body>
+<center>
+    <h1>{{topic}}</h1>
+</center>
+{% if sign==1 %}
+<div class="menuWrapper">
+    <div class="menu">
+        <a href="{{WEB_URL}}/action/listCarousel"><div class="menuItem">List Carousel</div></a>
+        <a href="{{WEB_URL}}/action/newCarousel"><div class="menuItem">Add Carousel</div></a>
+    </div>
+</div>
+{% endif %}

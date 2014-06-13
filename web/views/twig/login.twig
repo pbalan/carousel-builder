@@ -1,0 +1,34 @@
+{{  include("header.twig") }}
+<div class="carouselList outWrap">
+    <center>
+    <form name="loginForm" method="POST" action="">
+        <div class="loginWrap">
+            <div class="row">
+                <div class="labelText">
+                    Username
+                </div>
+                <div class="inputField">
+                    <input type="text" name="username" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="labelText">
+                    Password
+                </div>
+                <div class="inputField">
+                    <input type="password" name="password" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="labelText">
+                    &nbsp;
+                </div>
+                <div class="inputField">
+                    <input type="submit" value="login" name="submit" />
+                </div>
+            </div>
+        </div>
+    </form>
+    </center>
+</div>
+{{  include("footer.twig") }}
