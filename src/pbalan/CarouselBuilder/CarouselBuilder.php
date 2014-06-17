@@ -328,7 +328,7 @@
         {
             $fileObj = new FileUploader\FileUploader();
             $upForm = $fileObj->uploadForm();
-            $upForm = str_replace('/index.php', '/admin/action/addImages', $upForm);
+            $upForm = str_replace($_SERVER['PHP_SELF'], '/admin/action/addImages', $upForm);
             return $upForm;
         }
         
