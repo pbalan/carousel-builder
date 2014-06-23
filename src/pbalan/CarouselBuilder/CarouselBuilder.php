@@ -324,11 +324,11 @@
             return true;
         }
         
-        public function getUploadForm()
+        public function getUploadForm($action='/admin/action/addImages', $no_of_file=4)
         {
             $fileObj = new FileUploader\FileUploader();
-            $upForm = $fileObj->uploadForm();
-            $upForm = str_replace($_SERVER['PHP_SELF'], '/admin/action/addImages', $upForm);
+            $upForm = $fileObj->uploadForm($no_of_file);
+            $upForm = str_replace($_SERVER['PHP_SELF'], $action, $upForm);
             return $upForm;
         }
         
