@@ -301,7 +301,7 @@
             }
         }
         
-        public function uploadImages($dir, $carouselImages, $allowedExtn='')
+        public function uploadImages($dir, $carouselImages, $allowedExtn='', $filename='')
         {
             if(false===empty($dir) && true===is_dir($dir))
             {
@@ -315,7 +315,7 @@
             $fileObj = new FileUploader\FileUploader();
             try
             {
-                $fileObj->uploadPictures($carouselImages, $this->allowedExtn, $this->dir,false,0);
+                $fileObj->uploadPictures($carouselImages, $this->allowedExtn, $this->dir,false,0, $filename);
             } 
             catch (Exception $e)
             {
